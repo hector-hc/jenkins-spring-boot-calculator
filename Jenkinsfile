@@ -8,8 +8,9 @@ pipeline {
 
 	    }
 	    stage("Unit test") {
-	    	sh "./mvnw test"
+	    	steps {
+	    		sh "./mvnw test"
+	    	}
 	    }
 	}
-
 }
