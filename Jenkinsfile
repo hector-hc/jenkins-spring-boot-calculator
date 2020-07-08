@@ -1,6 +1,11 @@
 pipeline {
 	agent any
 	stages {
+		stage('Initialize'){
+        	def dockerHome = tool 'Jenkins-Docker'
+        	env.PATH = "${dockerHome}/bin:${env.PATH}"
+    	}
+	
 	    stage("Compile") {
 	        steps {
 	            sh "./mvnw compile"
