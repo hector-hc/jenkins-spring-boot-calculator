@@ -22,6 +22,25 @@ pipeline {
 	    		sh "./mvnw verify"
 	    	}
 	    }
+	    stage("Package") {
+	        steps {
+	            sh "./mvnw clean package -DskipTests"
+	        }
+
+	    }
+	    stage("Docker build") {
+	    	steps {
+	    	     sh "docker build -t hector-hc/jenkins-spring-boot-calculator:1.0 ."
+	    	}
+	    }
+	    stage("Docker push") {
+	    	steps {
+                 sh "docker push hector-hc/jenkins-spring-boot-calculator:1.0"
+	    	}
+                  
+	    }
+
+
 	    
 	    /*stage("Static code analysis") {
 	    	steps {
