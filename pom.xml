@@ -17,6 +17,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<maven-checkstyle.version>3.1.0</maven-checkstyle.version>
+		<checkstyle.version>8.27</checkstyle.version>
+		<spring-nohttp-checkstyle.version>0.0.4.RELEASE</spring-nohttp-checkstyle.version>
 	</properties>
 
 	<dependencies>
@@ -96,6 +99,64 @@
 								</rule>
 							</rules>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${maven-checkstyle.version}</version>
+				<dependencies>
+
+					<dependency>
+						<groupId>com.puppycrawl.tools</groupId>
+						<artifactId>checkstyle</artifactId>
+						<version>${checkstyle.version}</version>
+					</dependency>
+
+					
+					<dependency>
+						<groupId>io.spring.nohttp</groupId>
+						<artifactId>nohttp-checkstyle</artifactId>
+						<version>${spring-nohttp-checkstyle.version}</version>
+					</dependency>
+					
+
+				</dependencies>
+				<configuration>
+					<configLocation>checkstyle.xml</configLocation>
+					<failOnViolation>true</failOnViolation>
+					<enableFilesSummary>false</enableFilesSummary>
+					<!-- 
+					<checkstyleRules>
+						<module name="Checker">
+							
+							<module name="TreeWalker">
+								<module name="JavadocType">
+									<property name="scope" value="public" />
+								</module>
+							</module>
+						</module>
+					</checkstyleRules>
+					 -->
+					 <!-- 
+					<checkstyleRulesHeader>
+<![CDATA[
+<!DOCTYPE module PUBLIC
+  "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+  "https://checkstyle.org/dtds/configuration_1_3.dtd">
+]]>
+					</checkstyleRulesHeader>
+					 -->
+					<!-- <includes>pom.xml,README.md</includes> -->
+					<excludes>.git/**/*,target/**/*,node_modules/**/*,node/**/*,.mvn/**/*,wrapper/**/*</excludes>
+					<sourceDirectories>./</sourceDirectories>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
