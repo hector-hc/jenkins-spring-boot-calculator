@@ -22,7 +22,8 @@ pipeline {
 	    		sh "./mvnw verify"
 	    	}
 	    }
-	    stage("Static code analysis") {
+	    
+	    /*stage("Static code analysis") {
 	    	steps {
 	    		sh "./mvnw checkstyle:checkstyle";
 	    			publishHTML (target: [
@@ -31,6 +32,6 @@ pipeline {
         			reportName: "Checkstyle Report"
 				])
 	    	}
-	    }
+	    }*/
 	}
 }

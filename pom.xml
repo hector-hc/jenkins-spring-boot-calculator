@@ -18,7 +18,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-checkstyle.version>3.1.0</maven-checkstyle.version>
-		<checkstyle.version>8.27</checkstyle.version>
+		<checkstyle.version>8.29</checkstyle.version>
 		<spring-nohttp-checkstyle.version>0.0.4.RELEASE</spring-nohttp-checkstyle.version>
 	</properties>
 
@@ -102,6 +102,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -126,7 +127,7 @@
 				<configuration>
 					<configLocation>checkstyle.xml</configLocation>
 					<failOnViolation>true</failOnViolation>
-					<enableFilesSummary>false</enableFilesSummary>
+					<enableFilesSummary>false</enableFilesSummary> -->
 					<!-- 
 					<checkstyleRules>
 						<module name="Checker">
@@ -149,6 +150,7 @@
 					</checkstyleRulesHeader>
 					 -->
 					<!-- <includes>pom.xml,README.md</includes> -->
+					<!-- 
 					<excludes>.git/**/*,target/**/*,node_modules/**/*,node/**/*,.mvn/**/*,wrapper/**/*</excludes>
 					<sourceDirectories>./</sourceDirectories>
 				</configuration>
@@ -160,6 +162,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			 -->
 		</plugins>
 	</build>
 
