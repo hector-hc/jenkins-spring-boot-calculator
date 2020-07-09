@@ -30,12 +30,13 @@ pipeline {
 	        }
 
 	    }
+		/*
 	    stage('Initialize'){
 	    	steps {
 	    		def dockerHome = tool 'Jenkins-Docker'
         		env.PATH = "${dockerHome}/bin:${env.PATH}"    
 	    	}
-    	}
+    	    }*/
 	    stage("Docker build") {
 	    	steps {
 	    	     sh "docker build -t hector-hc/jenkins-spring-boot-calculator:1.0 ."
