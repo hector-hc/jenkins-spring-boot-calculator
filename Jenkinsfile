@@ -41,12 +41,12 @@ pipeline {
 	    	     sh "docker build -t hector-hc/jenkins-spring-boot-calculator:1.0 ."
 	    	}
 	    }
-	    stage("Docker push") {
+	    /*stage("Docker push") {
 	    	steps {
                  sh "docker push hector-hc/jenkins-spring-boot-calculator:1.0"
 	    	}
                   
-	    }
+	    }*/
 
 
 	    
